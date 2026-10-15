@@ -1,3 +1,8 @@
+/* Original:
+ * https://www.reddit.com/r/ErgoMechKeyboards/comments/w169sa/a_simple_34key_layout_with_oneshot_mods/
+ * https://github.com/rizo
+ */
+
 #include QMK_KEYBOARD_H
 
 #define KC_STAB LSFT(KC_TAB)
@@ -27,17 +32,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                  MO(_ACT), KC_LSFT,                       LT(_MOUSE, KC_SPC), MO(_SYM)
     ),
 
+    /* Transparent keys to use? */
     /* ACT - ACTION LAYER (Navigation & Modifiers)
      * ----------------------------------------   ----------------------------------------
-     * |      | Caps  |       |      | P UP |           |      | B_TAB|  ↑   | TAB  |      |
+     * |      |       |       |      | P UP |           |      | B_TAB|  ↑   | TAB  |      |
      * | CTRL |  OPT  |  CMD  | SHIFT| P DN |           | BKSP |  ←   |  ↓   |  →   | DEL  |
-     * |      |       |       |      |      |           |      | HOME |      | END  |      |
+     * |      |       |       |      |      |           |      | HOME |      | END  | CAPS |
      * -----------| XXXXXX | XXXXXX |                   | KC_ENT | KC_ESC |-----------
      */
     [_ACT] = LAYOUT(
-        XXXXXXX, KC_CAPS, XXXXXXX, XXXXXXX, KC_PGUP,      XXXXXXX, KC_STAB, KC_UP,   KC_TAB,  XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PGUP,      XXXXXXX, KC_STAB, KC_UP,   KC_TAB,  XXXXXXX,
         KC_LCTL, KC_LALT, KC_LCMD, KC_LSFT, KC_PGDN,      KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_DEL,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, KC_HOME, XXXXXXX, KC_END,  XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, KC_HOME, XXXXXXX, KC_END,  KC_CAPS,
                  _______, _______,                        KC_ENT,  KC_ESC
     ),
 
